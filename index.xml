@@ -6,8 +6,20 @@
     <description>Recent content in Samuel`s Blog on Samuel`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 18 Apr 2019 00:16:40 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 18 Apr 2019 12:12:59 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Python安装本地包</title>
+      <link>https://KenGeng.github.io/2019/python%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E5%8C%85/</link>
+      <pubDate>Thu, 18 Apr 2019 12:12:59 +0800</pubDate>
+      
+      <guid>https://KenGeng.github.io/2019/python%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E5%8C%85/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/35740229&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;conda 使用本地包安装 - 知乎&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title>About</title>
