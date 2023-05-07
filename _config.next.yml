@@ -102,7 +102,7 @@ post_meta:
 
 post_edit:
   enable: true
-  url: https://github.com/next-theme/theme-next-docs/edit/master/source/
+  url: https://github.com/KenGeng/KenGeng.github.io
 
 
 # ============================================================= #
