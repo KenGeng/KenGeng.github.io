@@ -88,7 +88,7 @@ marked:
 
 search:
   path: search.xml
-  field: all
+  field: post
   content: true
   format: html
 
@@ -100,7 +100,9 @@ ignore:
 
 # # Deployment
 # ## Docs: https://hexo.io/docs/one-command-deployment
-# deploy:
+deploy:
+  type: ''
+
 #   type: git
 #   repo: git@github.com:KenGeng/KenGeng.github.io.git
 #   branch: gh-pages
