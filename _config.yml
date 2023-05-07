@@ -87,8 +87,10 @@ marked:
   lazyload: true
 
 search:
-  path: search.json
-  field: all
+  path: search.xml
+  field: post
+  content: true
+  format: html
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
