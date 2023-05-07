@@ -153,10 +153,6 @@ post_meta:
   updated_at:
     enable: false
 
-symbols_count_time:
-  separated_meta: true
-  item_text_total: true
-
 post_edit:
   enable: true
   url: https://github.com/next-theme/theme-next-docs/edit/master/source/
