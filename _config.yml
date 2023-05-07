@@ -106,3 +106,8 @@ deploy:
 #   type: git
 #   repo: git@github.com:KenGeng/KenGeng.github.io.git
 #   branch: gh-pages
+# Post wordcount display settings
+# Dependencies: https://github.com/next-theme/hexo-word-counter
+symbols_count_time:
+  separated_meta: true
+  item_text_total: false

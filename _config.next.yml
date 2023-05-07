@@ -7,7 +7,6 @@
 # ============================================================= #
 
 custom_file_path:
-  sidebar: source/_data/sidebar.njk
   footer: source/_data/footer.njk
   variable: source/_data/variables.styl
   style: source/_data/styles.styl
@@ -114,11 +113,11 @@ sidebar:
   offset: 12
 
 avatar:
-  url: /images/logo.svg
+  url: /images/k.svg
   rounded: true
 
 social:
-  GitHub: https://github.com/next-theme || fab fa-github
+  GitHub: https://github.com/KenGeng || fab fa-github
   Crowdin: https://crowdin.com/project/hexo-theme-next || fa fa-globe-asia
   RSS: /atom.xml || fa fa-rss
 
@@ -138,7 +137,7 @@ toc:
 # ============================================================= #
 
 footer:
-  since: 2014
+  since: 2019
   icon:
     name: fa fa-heart
     animated: true
@@ -300,3 +299,34 @@ favicon:
   medium: /images/Kfavicon-32x32.png
   apple_touch_icon: /images/apple-touch-icon.png
   safari_pinned_tab: /images/k.svg
+
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  autodiscovery: true
+
+busuanzi_count:
+    enable: true
+    total_visitors: true
+    total_visitors_icon: user
+    total_views: true
+    total_views_icon: eye
+    post_views: true
+    post_views_icon: eye
+
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  exclude_codeblock: false
+  awl: 4
+  wpm: 275
+  suffix: "mins."
