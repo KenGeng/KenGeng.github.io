@@ -2587,10 +2587,6 @@ mjx-container[jax='CHTML'][display='true'],
 mjx-container[display='true'] + br {
   display: none;
 }
-.gitter-open-chat-button {
-  right: auto !important;
-  left: 10px !important;
-}
 .use-motion .animated {
   animation-fill-mode: none;
   visibility: inherit;
