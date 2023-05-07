@@ -287,3 +287,10 @@ gitter:
 vendors:
   internal: cdnjs
   plugins: cdnjs
+
+
+favicon:
+  small: /images/Kfavicon-16x16.png
+  medium: /images/Kfavicon-32x32.png
+  apple_touch_icon: /images/apple-touch-icon.png
+  safari_pinned_tab: /images/k.svg

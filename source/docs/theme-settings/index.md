@@ -80,11 +80,10 @@ To generate custom favicons, you can visit [Favicon Generator](https://realfavic
 
 ```yml Hexo config file
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
-  android_manifest: /images/manifest.json
+  small: /images/Kfavicon-16x16.png
+  medium: /images/Kfavicon-32x32.png
+  apple_touch_icon: /images/apple-touch-icon.png
+  safari_pinned_tab: /images/k.svg
 ```
 
 #### Custom Logo Support
