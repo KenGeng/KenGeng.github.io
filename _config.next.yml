@@ -179,7 +179,7 @@ back2top:
 
 github_banner:
   enable: true
-  permalink: https://github.com/next-theme/hexo-theme-next
+  permalink: https://github.com/bgeng777
   title: Fork NexT on GitHub
 
 font:
