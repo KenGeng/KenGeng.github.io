@@ -15,7 +15,7 @@
 <p>细节内容可以参考<span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3Mvc2V0dXA=">建站 | Hexo<i class="fa fa-external-link-alt"></i></span><br>另外部分默认目录其实不需要使用，可以参考本项目的目录结构进行组织。</p>
 </li>
 <li><p>本地调试</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>deploy之后，打开terminal里提示的本地页面进行查看即可。</p>
 </li>
@@ -38,7 +38,7 @@
 <p>配置方式基本都是npm install对应插件后，修改NexT _config.yml添加相应开关即可。</p>
 <h1 id="设置Avatar"><a href="#设置Avatar" class="headerlink" title="设置Avatar"></a>设置Avatar</h1><p>我们可以设置博客在浏览器的Avatar，这里记录一些使用的工具：</p>
 <ol>
-<li><p>设计自己的Avatar图片：<span class="exturl" data-url="aHR0cHM6Ly93d3cubG9nb3NjLmNuL2xvZ28vZmF2aWNvbj9zPUs=">KFavicon.ico图标生成器 | 一键免费制作ico图标 - 标小智LOGO神器<i class="fa fa-external-link-alt"></i></span></p>
+<li><p>设计自己的Avatar图片：<span class="exturl" data-url="aHR0cHM6Ly93d3cubG9nb3NjLmNuL2xvZ28vZmF2aWNvbj9zPUs=">KFavicon.ico图标生成器 | 一键免费制作ico图标 - 标小智LOGO神器<i class="fa fa-external-link-alt"></i></span> 生成之后可以按参考文章4进行设置。</p>
 </li>
 <li><p>一些常见Icon：<span class="exturl" data-url="aHR0cHM6Ly9mb250YXdlc29tZS5jb20vaWNvbnMvemhpaHU/Zj1icmFuZHMmcz1zb2xpZA==">Zhihu Icon | Font Awesome<i class="fa fa-external-link-alt"></i></span></p>
 </li>
@@ -55,24 +55,6 @@
 <li><p><span class="exturl" data-url="aHR0cHM6Ly93YW5neGlhb3l1LWdvLmdpdGh1Yi5pby8yMDE4LzExLzE4L2NoYW5nZS10aGVtZS1mYXZpY29uLw==">更换Hexo的网页图标&#x2F;小图片Hexo change page favicon | Yu&#39;s Notes<i class="fa fa-external-link-alt"></i></span></p>
 </li>
 </ol>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/hello-world/</url>
-    <content><![CDATA[<p>ddd Welcome to <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvLw==">Hexo<i class="fa fa-external-link-alt"></i></span>! This is your very first post. Check <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mv">documentation<i class="fa fa-external-link-alt"></i></span> for more info. If you get any problems when using Hexo, you can find the answer in <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3MvdHJvdWJsZXNob290aW5nLmh0bWw=">troubleshooting<i class="fa fa-external-link-alt"></i></span> or you can ask me on <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL2lzc3Vlcw==">GitHub<i class="fa fa-external-link-alt"></i></span>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvd3JpdGluZy5odG1s">Writing<i class="fa fa-external-link-alt"></i></span></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvc2VydmVyLmh0bWw=">Server<i class="fa fa-external-link-alt"></i></span></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZ2VuZXJhdGluZy5odG1s">Generating<i class="fa fa-external-link-alt"></i></span></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvb25lLWNvbW1hbmQtZGVwbG95bWVudC5odG1s">Deployment<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
   </entry>
 </search>
