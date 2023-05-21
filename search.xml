@@ -3,7 +3,59 @@
   <entry>
     <title>Build My Own Website</title>
     <url>/build-my-own-website/</url>
-    <content><![CDATA[<h1 id="配置GitHub"><a href="#配置GitHub" class="headerlink" title="配置GitHub"></a>配置GitHub</h1><h1 id="初始化Hexo项目"><a href="#初始化Hexo项目" class="headerlink" title="初始化Hexo项目"></a>初始化Hexo项目</h1><h1 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h1><h1 id="配置插件"><a href="#配置插件" class="headerlink" title="配置插件"></a>配置插件</h1><h1 id="设置Avatar"><a href="#设置Avatar" class="headerlink" title="设置Avatar"></a>设置Avatar</h1>]]></content>
+    <content><![CDATA[<p>本文介绍如何基于Hexo + Github搭建自己的博客，以及如何配置Hexo NEXT主题以及相关插件。本文博客对应代码位于<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0tlbkdlbmcvS2VuR2VuZy5naXRodWIuaW8=">GitHub - KenGeng&#x2F;KenGeng.github.io<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="配置GitHub"><a href="#配置GitHub" class="headerlink" title="配置GitHub"></a>配置GitHub</h1><p>可以参考Hexo官网提供的<span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3MvZ2l0aHViLXBhZ2VzLmh0bWwjJUU0JUI4JTgwJUU5JTk0JUFFJUU5JTgzJUE4JUU3JUJEJUIy">文档<i class="fa fa-external-link-alt"></i></span>完成配置，</p>
+<h1 id="本地初始化Hexo项目"><a href="#本地初始化Hexo项目" class="headerlink" title="本地初始化Hexo项目"></a>本地初始化Hexo项目</h1><ol>
+<li><p>安装Hexo</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">echo &#x27;PATH=&quot;$PATH:/usr/local/lib/node_modules/hexo-cli/bin&quot;&#x27; &gt;&gt; ~/.zshrc</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">npm的默认安装路径可能有变化，可以参考https://zhangxiaoshang.github.io/2018/02/09/Mac-OS-%E4%B8%ADnpm%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E7%9A%84%E5%8C%85%E7%9A%84%E5%AD%98%E5%82%A8%E8%B7%AF%E5%BE%84/</span></span><br><span class="line">source ~/.zshrc</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化项目</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init &lt;hexo-site&gt;</span><br><span class="line">cd &lt;hexo-site&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>细节内容可以参考<span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3Mvc2V0dXA=">建站 | Hexo<i class="fa fa-external-link-alt"></i></span><br>另外部分默认目录其实不需要使用，可以参考本项目的目录结构进行组织。</p>
+</li>
+<li><p>本地调试</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>deploy之后，打开terminal里提示的本地页面进行查看即可。</p>
+</li>
+</ol>
+<h1 id="切换到NEXT主题"><a href="#切换到NEXT主题" class="headerlink" title="切换到NEXT主题"></a>切换到NEXT主题</h1><p>Hexo有很多精美的主题，我这里使用的是NEXT主题的<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL25leHQtdGhlbWUvaGV4by10aGVtZS1uZXh0">Gemini样式<i class="fa fa-external-link-alt"></i></span>，详细内容可以参考<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL2dldHRpbmctc3RhcnRlZC8=">官方文档<i class="fa fa-external-link-alt"></i></span></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd &lt;hexo-site&gt;</span><br><span class="line">npm install hexo-theme-next@latest</span><br></pre></td></tr></table></figure>
+
+<p>Hexo与NEXT主题都提供了很多配置项，可以参考<span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3MvY29uZmlndXJhdGlvbi5odG1s">Configuration | Hexo<i class="fa fa-external-link-alt"></i></span>和对一些基础信息进行修改，例如名字、各类超链接等。</p>
+<h1 id="配置插件"><a href="#配置插件" class="headerlink" title="配置插件"></a>配置插件</h1><p>NEXT支持丰富的插件，来提供一些小功能例如字数统计等。本博客使用了以下插件：</p>
+<ol>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLW5leHQucmVhZHRoZWRvY3MuaW8vemhfQ04vbGF0ZXN0L25leHQvYWR2YW5jZWQvJUU1JUFEJTk3JUU2JTk1JUIwJUU3JUJCJTlGJUU4JUFFJUExLw==">字数统计 - Hexo-NexT<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLW5leHQucmVhZHRoZWRvY3MuaW8vemhfQ04vbGF0ZXN0L25leHQvYWR2YW5jZWQvJUU2JTkwJTlDJUU3JUI0JUEyJUU2JTlDJThEJUU1JThBJUExLw==">搜索服务 - Hexo-NexT<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLW5leHQucmVhZHRoZWRvY3MuaW8vemhfQ04vbGF0ZXN0L25leHQvYWR2YW5jZWQvUlNTJUU2JTk0JUFGJUU2JThDJTgxLw==">RSS支持 - Hexo-NexT<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLW5leHQucmVhZHRoZWRvY3MuaW8vemhfQ04vbGF0ZXN0L25leHQvYWR2YW5jZWQvJUU0JUI4JThEJUU4JTkyJTlDJUU1JUFEJTkwLSVFNiU5NiU4NyVFNyVBQiVBMCVFOSU5OCU4NSVFOCVBRiVCQiVFNiVBQyVBMSVFNiU5NSVCMC8=">[不蒜子]文章阅读次数 - Hexo-NexT<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+</ol>
+<p>配置方式基本都是npm install对应插件后，修改NexT _config.yml添加相应开关即可。</p>
+<h1 id="设置Avatar"><a href="#设置Avatar" class="headerlink" title="设置Avatar"></a>设置Avatar</h1><p>我们可以设置博客在浏览器的Avatar，这里记录一些使用的工具：</p>
+<ol>
+<li><p>设计自己的Avatar图片：<span class="exturl" data-url="aHR0cHM6Ly93d3cubG9nb3NjLmNuL2xvZ28vZmF2aWNvbj9zPUs=">KFavicon.ico图标生成器 | 一键免费制作ico图标 - 标小智LOGO神器<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p>一些常见Icon：<span class="exturl" data-url="aHR0cHM6Ly9mb250YXdlc29tZS5jb20vaWNvbnMvemhpaHU/Zj1icmFuZHMmcz1zb2xpZA==">Zhihu Icon | Font Awesome<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p>将PNG转成SVG用于作为博客头像：<span class="exturl" data-url="aHR0cHM6Ly93d3cuYWNvbnZlcnQuY29tL2NuL2ltYWdlL3BuZy10by1zdmcv">PNG转SVG - 在线转换图像文件<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+</ol>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><ol>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly96ejJzdW1tZXIuZ2l0aHViLmlvL2dpdGh1Yi1oZXhvLSVFNiU5MCVBRCVFNSVCQiVCQSVFNCVCOCVBQSVFNCVCQSVCQSVFNSU4RCU5QSVFNSVBRSVBMi8jJUU5JTgxJTg3JUU1JTg4JUIwJUU3JTlBJTg0JUU5JTk3JUFFJUU5JUEyJTk4">Github + Hexo 搭建个人博客 - 渣渣的夏天<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20veXdhbmctd25sby9wLzE2MTEwNDExLmh0bWwjbWVybWFpZA==">【Hexo】NexT 主题的配置使用记录 - ywang_wnlo - 博客园<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC81MTQ5ODI4MzE=">搭建个人博客 — Hexo+Markdown+Github Pages - 知乎<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly93YW5neGlhb3l1LWdvLmdpdGh1Yi5pby8yMDE4LzExLzE4L2NoYW5nZS10aGVtZS1mYXZpY29uLw==">更换Hexo的网页图标&#x2F;小图片Hexo change page favicon | Yu&#39;s Notes<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+</ol>
+]]></content>
   </entry>
   <entry>
     <title>Hello World</title>
