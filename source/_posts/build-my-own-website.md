@@ -38,6 +38,7 @@ tags:
    hexo clean
    hexo generate
    hexo deploy
+   
    ```
    
    deploy之后，打开terminal里提示的本地页面进行查看即可。
@@ -71,7 +72,7 @@ NEXT支持丰富的插件，来提供一些小功能例如字数统计等。本�
 
 我们可以设置博客在浏览器的Avatar，这里记录一些使用的工具：
 
-1. 设计自己的Avatar图片：[KFavicon.ico图标生成器 | 一键免费制作ico图标 - 标小智LOGO神器](https://www.logosc.cn/logo/favicon?s=K)
+1. 设计自己的Avatar图片：[KFavicon.ico图标生成器 | 一键免费制作ico图标 - 标小智LOGO神器](https://www.logosc.cn/logo/favicon?s=K) 生成之后可以按参考文章4进行设置。
 
 2. 一些常见Icon：[Zhihu Icon | Font Awesome](https://fontawesome.com/icons/zhihu?f=brands&s=solid)
 
