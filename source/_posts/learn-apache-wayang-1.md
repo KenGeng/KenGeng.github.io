@@ -1,4 +1,8 @@
-# Learning Apache Wayang(1)
+---
+title: Learning Apache Wayang(1)
+date: 2023-09-24
+tags:
+---
 
 Project Link: [GitHub - apache/incubator-wayang: Apache Wayang(incubating) is the first cross-platform data processing system.](https://github.com/apache/incubator-wayang)
 
