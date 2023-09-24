@@ -58,9 +58,9 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
+    <title>Learning Apache Wayang(1)</title>
     <url>/learn-apache-wayang-1/</url>
-    <content><![CDATA[<h1 id="Learning-Apache-Wayang-1"><a href="#Learning-Apache-Wayang-1" class="headerlink" title="Learning Apache Wayang(1)"></a>Learning Apache Wayang(1)</h1><p>Project Link: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FwYWNoZS9pbmN1YmF0b3Itd2F5YW5n">GitHub - apache&#x2F;incubator-wayang: Apache Wayang(incubating) is the first cross-platform data processing system.<i class="fa fa-external-link-alt"></i></span></p>
+    <content><![CDATA[<p>Project Link: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FwYWNoZS9pbmN1YmF0b3Itd2F5YW5n">GitHub - apache&#x2F;incubator-wayang: Apache Wayang(incubating) is the first cross-platform data processing system.<i class="fa fa-external-link-alt"></i></span></p>
 <h1 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h1><p>Wayang integrate multiple execution engines(e.g. Spark, Flink, simple java stream) to perform computation task. It provides uses with its customized API and it will choose the engine that best fits the application. The key value of Wayang is that it hides the complexity of learning APIs of different big data systems. Instead, users only needs to utilize Wayang API. </p>
 <h1 id="My-Thoughts"><a href="#My-Thoughts" class="headerlink" title="My Thoughts"></a>My Thoughts</h1><p>IMO, Wayang is like the planner of big data systems, which translates Wayang jobs to Spark&#x2F;Flink&#x2F;... jobs. Some questions that may be interesting:</p>
 <ol>
