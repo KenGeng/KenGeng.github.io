@@ -58,6 +58,19 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Use Arthas to get codes of generated class</title>
+    <url>/use-arthas/</url>
+    <content><![CDATA[<h1 id="下载Arthas"><a href="#下载Arthas" class="headerlink" title="下载Arthas"></a>下载Arthas</h1><p>curl -O <span class="exturl" data-url="aHR0cHM6Ly9hcnRoYXMuYWxpeXVuLmNvbS9hcnRoYXMtYm9vdC5qYXI=">https://arthas.aliyun.com/arthas-boot.jar<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="启动Arthas"><a href="#启动Arthas" class="headerlink" title="启动Arthas"></a>启动Arthas</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java -jar arthas-boot.jar</span><br><span class="line"><span class="comment"># 输入想要查看的Java进程ID, arthas会attach到对应进程</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="查询包含-quot-Generated-quot-关键字的Class"><a href="#查询包含-quot-Generated-quot-关键字的Class" class="headerlink" title="查询包含&quot;Generated&quot;关键字的Class"></a>查询包含&quot;Generated&quot;关键字的Class</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sc *Generated*</span><br></pre></td></tr></table></figure>
+
+<h1 id="反编译指定已加载类的源码"><a href="#反编译指定已加载类的源码" class="headerlink" title="反编译指定已加载类的源码"></a>反编译指定已加载类的源码</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jad a.b.c.TargetGeneratedClass</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+  </entry>
+  <entry>
     <title>Learning Apache Wayang(1)</title>
     <url>/learn-apache-wayang-1/</url>
     <content><![CDATA[<p>Project Link: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FwYWNoZS9pbmN1YmF0b3Itd2F5YW5n">GitHub - apache&#x2F;incubator-wayang: Apache Wayang(incubating) is the first cross-platform data processing system.<i class="fa fa-external-link-alt"></i></span></p>
