@@ -92,7 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-bell fa-fw"></i>Home</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">3</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-bell fa-fw"></i>Home</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">4</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -157,9 +157,17 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
@@ -189,6 +197,164 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kengeng.github.io/try-openclaw/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/k2.svg">
+      <meta itemprop="name" content="Ken Geng">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KenGeng">
+      <meta itemprop="description" content="Be an imperfectionist and just do it.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | KenGeng">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/try-openclaw/" class="post-title-link" itemprop="url">Mac上部署OpenClaw流程记录</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2026-02-23 21:31:00" itemprop="dateCreated datePublished" datetime="2026-02-23T21:31:00+08:00">2026-02-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AI/OpenClaw/" itemprop="url" rel="index"><span itemprop="name">OpenClaw</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AI/OpenClaw/%E9%98%BF%E9%87%8C%E4%BA%91/" itemprop="url" rel="index"><span itemprop="name">阿里云</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Mac上部署OpenClaw流程记录"><a href="#Mac上部署OpenClaw流程记录" class="headerlink" title="Mac上部署OpenClaw流程记录"></a>Mac上部署OpenClaw流程记录</h1><p>最近尝试了使用阿里云PAI的API来部署使用 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL29wZW5jbGF3L29wZW5jbGF3">OpenClaw<i class="fa fa-external-link-alt"></i></span> 这个开源的AI个人助理框架。过程中，遇到了一些有趣的问题，特别是关于TLS证书验证的&quot;Connection error&quot;，最终通过设置环境变量 <code>NODE_TLS_REJECT_UNAUTHORIZED</code> 成功解决。本文将详细记录整个安装、部署和测试的完整过程，希望能帮助遇到同样问题的朋友。</p>
+<h2 id="什么是OpenClaw？"><a href="#什么是OpenClaw？" class="headerlink" title="什么是OpenClaw？"></a>什么是OpenClaw？</h2><p>OpenClaw是一个开源的AI个人助理框架，它允许你：</p>
+<ul>
+<li>创建个性化的AI助手</li>
+<li>集成多种AI模型提供商（包括阿里云PAI）</li>
+<li>通过各种渠道（Web、Telegram、WhatsApp等）与助手交互</li>
+<li>扩展功能通过插件和技能系统</li>
+</ul>
+<h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><p>在开始之前，请确保已经准备好以下内容：</p>
+<ol>
+<li><strong>阿里云账号</strong> </li>
+<li><strong>PAI服务已开通</strong> - 在阿里云控制台中开通PAI服务</li>
+<li><strong>API Key</strong> - 从阿里云PAI控制台获取API Key</li>
+<li><strong>Node.js环境</strong></li>
+<li><strong>Git</strong> - 用于克隆OpenClaw仓库</li>
+</ol>
+<h2 id="Step-1-安装OpenClaw"><a href="#Step-1-安装OpenClaw" class="headerlink" title="Step 1: 安装OpenClaw"></a>Step 1: 安装OpenClaw</h2><p>首先，我们需要安装OpenClaw：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://openclaw.ai/install.sh | bash</span><br></pre></td></tr></table></figure>
+<p>参考 <span class="exturl" data-url="aHR0cHM6Ly9hd2Vzb21lLnRyeW9wZW5jbGF3LmFzaWEvZG9jcy8wMS1iYXNpY3MvMDItaW5zdGFsbGF0aW9uLmh0bWw=">https://awesome.tryopenclaw.asia/docs/01-basics/02-installation.html<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="Step-2-初始化OpenClaw工"><a href="#Step-2-初始化OpenClaw工" class="headerlink" title="Step 2: 初始化OpenClaw工"></a>Step 2: 初始化OpenClaw工</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">openclaw onboard</span><br><span class="line"><span class="comment"># 选择 `QuickStart` </span></span><br><span class="line"><span class="comment"># 参考阿里云文档进行配置：https://help.aliyun.com/zh/model-studio/openclaw#faq-model-not-found</span></span><br></pre></td></tr></table></figure>
+
+<p>完成后，会在主目录创建一个 <code>.openclaw</code> 文件夹，包含所有配置文件。</p>
+<h2 id="Step-3-配置阿里云PAI-API-Key"><a href="#Step-3-配置阿里云PAI-API-Key" class="headerlink" title="Step 3: 配置阿里云PAI API Key"></a>Step 3: 配置阿里云PAI API Key</h2><p>现在我们需要配置阿里云PAI的API凭证。OpenClaw支持多种AI模型提供商，我们需要在配置文件中指定使用阿里云PAI。</p>
+<h3 id="3-1-创建配置文件"><a href="#3-1-创建配置文件" class="headerlink" title="3.1 创建配置文件"></a>3.1 创建配置文件</h3><p>在 <code>.openclaw</code> 目录中创建或编辑 <code>openclaw.json</code> 文件，我的配置文件如下：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;meta&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;lastTouchedVersion&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2026.2.15&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;lastTouchedAt&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2026-02-16T13:04:09.838Z&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;wizard&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;lastRunAt&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2026-02-16T13:04:09.832Z&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;lastRunVersion&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2026.2.15&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;lastRunCommand&quot;</span><span class="punctuation">:</span> <span class="string">&quot;configure&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;lastRunMode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;local&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;models&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;mode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;merge&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;providers&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;bailian&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;baseUrl&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://dashscope.aliyuncs.com/compatible-mode/v1&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;apiKey&quot;</span><span class="punctuation">:</span> <span class="string">&quot;sk-your-key&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;api&quot;</span><span class="punctuation">:</span> <span class="string">&quot;openai-completions&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;models&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">          <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;qwen3-max-2026-01-23&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;qwen3-max-2026-01-23&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;reasoning&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;input&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">              <span class="string">&quot;text&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cost&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">              <span class="attr">&quot;input&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">              <span class="attr">&quot;output&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">              <span class="attr">&quot;cacheRead&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">              <span class="attr">&quot;cacheWrite&quot;</span><span class="punctuation">:</span> <span class="number">0</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;contextWindow&quot;</span><span class="punctuation">:</span> <span class="number">262144</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;maxTokens&quot;</span><span class="punctuation">:</span> <span class="number">65536</span></span><br><span class="line">          <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">          <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;qwen3-coder-plus&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;qwen3-coder-plus&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;reasoning&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;input&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">              <span class="string">&quot;text&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cost&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">              <span class="attr">&quot;input&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">              <span class="attr">&quot;output&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">              <span class="attr">&quot;cacheRead&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">              <span class="attr">&quot;cacheWrite&quot;</span><span class="punctuation">:</span> <span class="number">0</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;contextWindow&quot;</span><span class="punctuation">:</span> <span class="number">131072</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;maxTokens&quot;</span><span class="punctuation">:</span> <span class="number">32768</span></span><br><span class="line">          <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;agents&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;defaults&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;model&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;primary&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bailian/qwen3-max-2026-01-23&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;models&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;bailian/qwen3-max-2026-01-23&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">          <span class="attr">&quot;alias&quot;</span><span class="punctuation">:</span> <span class="string">&quot;qwen3-max-thinking&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">      <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;workspace&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/.openclaw/workspace&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;maxConcurrent&quot;</span><span class="punctuation">:</span> <span class="number">4</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;subagents&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;maxConcurrent&quot;</span><span class="punctuation">:</span> <span class="number">8</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;messages&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;ackReactionScope&quot;</span><span class="punctuation">:</span> <span class="string">&quot;group-mentions&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;commands&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;native&quot;</span><span class="punctuation">:</span> <span class="string">&quot;auto&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;nativeSkills&quot;</span><span class="punctuation">:</span> <span class="string">&quot;auto&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;gateway&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;port&quot;</span><span class="punctuation">:</span> <span class="number">18788</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;mode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;local&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;bind&quot;</span><span class="punctuation">:</span> <span class="string">&quot;loopback&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;auth&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;mode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;token&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;token&quot;</span><span class="punctuation">:</span> <span class="string">&quot;your_token&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tailscale&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;mode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;off&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;resetOnExit&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Step-4-解决TLS证书验证问题"><a href="#Step-4-解决TLS证书验证问题" class="headerlink" title="Step 4: 解决TLS证书验证问题"></a>Step 4: 解决TLS证书验证问题</h2><p>在配置完成并启动gateway之后后，我遇到了一个恶心的问题，和模型交互时一直报错：**&quot;Connection error&quot;**。我通过以下命令反复重启Gateway Server都无法解决问题：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">openclaw gateway install</span><br><span class="line">openclaw gateway stop</span><br><span class="line">openclaw gateway restart</span><br></pre></td></tr></table></figure>
+
+<p>最后经过排查，我发现这是由于Node.js的TLS证书验证机制导致的。</p>
+<h3 id="4-1-问题分析"><a href="#4-1-问题分析" class="headerlink" title="4.1 问题分析"></a>4.1 问题分析</h3><p>我构造了一个node js程序来判断是否能直接用js来访问阿里云模型:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test-openclaw.<span class="property">js</span></span><br><span class="line"><span class="keyword">const</span> &#123; <span class="title class_">OpenAI</span> &#125; = <span class="built_in">require</span>(<span class="string">&#x27;openai&#x27;</span>); <span class="comment">// 确保安装了 openai 包: npm install openai</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 手动硬编码配置，完全绕过环境变量</span></span><br><span class="line"><span class="keyword">const</span> client = <span class="keyword">new</span> <span class="title class_">OpenAI</span>(&#123;</span><br><span class="line">  <span class="attr">apiKey</span>: <span class="string">&#x27;sk-your-key&#x27;</span>,</span><br><span class="line">  <span class="attr">baseURL</span>: <span class="string">&#x27;https://dashscope.aliyuncs.com/compatible-mode/v1&#x27;</span>,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;正在请求模型列表...&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> list = <span class="keyword">await</span> client.<span class="property">models</span>.<span class="title function_">list</span>();</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;✅ 成功！获取到的模型:&#x27;</span>, list.<span class="property">data</span>[<span class="number">0</span>].<span class="property">id</span>);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;❌ 报错详情:&#x27;</span>, error.<span class="property">message</span>);</span><br><span class="line">    <span class="keyword">if</span> (error.<span class="property">cause</span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;底层原因:&#x27;</span>, error.<span class="property">cause</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">test</span>();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>但运行时发现遇到了nodejs的SSL证书相关报错</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">node test-openclaw.js</span><br><span class="line">报错详情: Connection error.</span><br><span class="line">底层原因: [TypeError: fetch failed] &#123;</span><br><span class="line">  [cause]: Error: unable to get local issuer certificate</span><br><span class="line">      at TLSSocket.onConnectSecure (node:internal/tls/wrap:1648:34)</span><br><span class="line">      at TLSSocket.emit (node:events:508:20)</span><br><span class="line">      at TLSSocket._finishInit (node:internal/tls/wrap:1094:8)</span><br><span class="line">      at ssl.onhandshakedone (node:internal/tls/wrap:880:12) &#123;</span><br><span class="line">    code: &#x27;UNABLE_TO_GET_ISSUER_CERT_LOCALLY&#x27;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以判定是这里的SSL鉴权有问题。</p>
+<h3 id="4-2-解决方案"><a href="#4-2-解决方案" class="headerlink" title="4.2 解决方案"></a>4.2 解决方案</h3><p>根据我在 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL29wZW5jbGF3L29wZW5jbGF3L2lzc3Vlcy8xMDgwNg==">GitHub Issue #10806<i class="fa fa-external-link-alt"></i></span> 中的详细记录，解决方案是设置环境变量 <code>NODE_TLS_REJECT_UNAUTHORIZED=0</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">create ~/.openclaw/.env</span><br><span class="line">add the line NODE_TLS_REJECT_UNAUTHORIZED=0</span><br></pre></td></tr></table></figure>
+
+<p><strong>重要警告</strong>：这个设置会禁用TLS证书验证，<strong>仅在开发和测试环境中使用</strong>。在生产环境中，应该正确配置证书而不是禁用验证。</p>
+<p>以及注意openclaw在启动gateway进程时不尊重我们的sys env，我们必须要在 ~&#x2F;.openclaw&#x2F;.env中进行设置。</p>
+<h2 id="Step-5-启动和测试OpenClaw"><a href="#Step-5-启动和测试OpenClaw" class="headerlink" title="Step 5: 启动和测试OpenClaw"></a>Step 5: 启动和测试OpenClaw</h2><p>现在启动OpenClaw并进行测试：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">openclaw gateway restart</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-1-Web界面测试"><a href="#5-1-Web界面测试" class="headerlink" title="5.1 Web界面测试"></a>5.1 Web界面测试</h3><p>打开浏览器访问 <code>http://localhost:18789</code>，你应该能看到OpenClaw的Web界面。</p>
+<h3 id="5-2-命令行测试"><a href="#5-2-命令行测试" class="headerlink" title="5.2 命令行测试"></a>5.2 命令行测试</h3><p>你也可以通过命令行直接与OpenClaw交互：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">openclaw tui</span><br><span class="line"><span class="comment">## 可以和模型进行对话了</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9hd2Vzb21lLnRyeW9wZW5jbGF3LmFzaWEvZG9jcy8wMS1iYXNpY3MvMDItaW5zdGFsbGF0aW9uLmh0bWw=">教程1<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm9wZW5jbGF3LmFpL2dhdGV3YXkvdHJvdWJsZXNob290aW5nI2dhdGV3YXktc2VydmljZS1ub3QtcnVubmluZw==">OpenClaw官方文档<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9oZWxwLmFsaXl1bi5jb20vemgvbW9kZWwtc3R1ZGlvL29wZW5jbGF3">阿里云PAI文档<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL29wZW5jbGF3L29wZW5jbGF3L2lzc3Vlcy8xMDgwNg==">GitHub Issue #10806 - TLS证书问题讨论<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<hr>
+<p><em>本文基于实际部署经验编写，如有疑问或发现错误，欢迎联系作者。</em></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -535,7 +701,7 @@
 
 <div class="copyright">
   &copy; 2019 – 
-  <span itemprop="copyrightYear">2025</span>
+  <span itemprop="copyrightYear">2026</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -546,13 +712,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">1k</span>
+    <span title="Word count total">2k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">3 mins.</span>
+    <span title="Reading time total">8 mins.</span>
   </span>
 </div>
 <div class="busuanzi-count">
